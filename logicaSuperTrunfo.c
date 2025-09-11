@@ -1,43 +1,52 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+// Implementação do Nível Novato
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    // Variáveis para armazenar os dados das cidades
+    char nomeCidadeA[50], nomeCidadeB[50];
+    int populacaoA, populacaoB;
+    float areaA, areaB, pibA, pibB;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    printf("=== Cadastro das Cartas ===\n");
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    // Cadastro da primeira cidade
+    printf("\nDigite o nome da Cidade A: ");
+    scanf("%s", nomeCidadeA);
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    printf("Digite a população da Cidade A: ");
+    scanf("%d", &populacaoA);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("Digite a área da Cidade A (km²): ");
+    scanf("%f", &areaA);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("Digite o PIB da Cidade A: ");
+    scanf("%f", &pibA);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    // Cadastro da segunda cidade
+    printf("\nDigite o nome da Cidade B: ");
+    scanf("%s", nomeCidadeB);
+
+    printf("Digite a população da Cidade B: ");
+    scanf("%d", &populacaoB);
+
+    printf("Digite a área da Cidade B (km²): ");
+    scanf("%f", &areaB);
+
+    printf("Digite o PIB da Cidade B: ");
+    scanf("%f", &pibB);
+
+    printf("\n=== Comparação ===\n");
+
+    // Comparação simples pela população (maior vence)
+    if (populacaoA > populacaoB) {
+        printf("A cidade vencedora é: %s (maior população)\n", nomeCidadeA);
+    } else if (populacaoB > populacaoA) {
+        printf("A cidade vencedora é: %s (maior população)\n", nomeCidadeB);
+    } else {
+        printf("As duas cidades possuem a mesma população.\n");
+    }
 
     return 0;
 }
