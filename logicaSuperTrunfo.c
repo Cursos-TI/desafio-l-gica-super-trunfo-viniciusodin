@@ -1,51 +1,71 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Implementação do Nível Novato
+// Estrutura para armazenar os dados da carta
+typedef struct {
+    char estado[30];
+    char codigo[5];
+    char nome[30];
+    int populacao;
+    float area;
+    float pib;
+    int pontos_turisticos;
+} Carta;
 
 int main() {
-    // Variáveis para armazenar os dados das cidades
-    char nomeCidadeA[50], nomeCidadeB[50];
-    int populacaoA, populacaoB;
-    float areaA, areaB, pibA, pibB;
+    Carta carta1, carta2;
 
-    printf("=== Cadastro das Cartas ===\n");
+    // Cadastro da primeira carta
+    printf("=== Cadastro da Carta 1 ===\n");
+    printf("Estado: ");
+    scanf(" %[^\n]", carta1.estado);
+    printf("Codigo: ");
+    scanf(" %s", carta1.codigo);
+    printf("Cidade: ");
+    scanf(" %[^\n]", carta1.nome);
+    printf("Populacao: ");
+    scanf("%d", &carta1.populacao);
+    printf("Area (km²): ");
+    scanf("%f", &carta1.area);
+    printf("PIB (em bilhoes): ");
+    scanf("%f", &carta1.pib);
+    printf("Pontos Turisticos: ");
+    scanf("%d", &carta1.pontos_turisticos);
 
-    // Cadastro da primeira cidade
-    printf("\nDigite o nome da Cidade A: ");
-    scanf("%s", nomeCidadeA);
+    // Cadastro da segunda carta
+    printf("\n=== Cadastro da Carta 2 ===\n");
+    printf("Estado: ");
+    scanf(" %[^\n]", carta2.estado);
+    printf("Codigo: ");
+    scanf(" %s", carta2.codigo);
+    printf("Cidade: ");
+    scanf(" %[^\n]", carta2.nome);
+    printf("Populacao: ");
+    scanf("%d", &carta2.populacao);
+    printf("Area (km²): ");
+    scanf("%f", &carta2.area);
+    printf("PIB (em bilhoes): ");
+    scanf("%f", &carta2.pib);
+    printf("Pontos Turisticos: ");
+    scanf("%d", &carta2.pontos_turisticos);
 
-    printf("Digite a população da Cidade A: ");
-    scanf("%d", &populacaoA);
+    // Exibe as cartas cadastradas
+    printf("\n===== CARTAS CADASTRADAS =====\n");
+    printf("Carta 1 - %s (%s)\n", carta1.nome, carta1.estado);
+    printf("Populacao: %d | Area: %.2f km² | PIB: %.2f | Pontos Turisticos: %d\n",
+           carta1.populacao, carta1.area, carta1.pib, carta1.pontos_turisticos);
 
-    printf("Digite a área da Cidade A (km²): ");
-    scanf("%f", &areaA);
+    printf("\nCarta 2 - %s (%s)\n", carta2.nome, carta2.estado);
+    printf("Populacao: %d | Area: %.2f km² | PIB: %.2f | Pontos Turisticos: %d\n",
+           carta2.populacao, carta2.area, carta2.pib, carta2.pontos_turisticos);
 
-    printf("Digite o PIB da Cidade A: ");
-    scanf("%f", &pibA);
-
-    // Cadastro da segunda cidade
-    printf("\nDigite o nome da Cidade B: ");
-    scanf("%s", nomeCidadeB);
-
-    printf("Digite a população da Cidade B: ");
-    scanf("%d", &populacaoB);
-
-    printf("Digite a área da Cidade B (km²): ");
-    scanf("%f", &areaB);
-
-    printf("Digite o PIB da Cidade B: ");
-    scanf("%f", &pibB);
-
-    printf("\n=== Comparação ===\n");
-
-    // Comparação simples pela população (maior vence)
-    if (populacaoA > populacaoB) {
-        printf("A cidade vencedora é: %s (maior população)\n", nomeCidadeA);
-    } else if (populacaoB > populacaoA) {
-        printf("A cidade vencedora é: %s (maior população)\n", nomeCidadeB);
+    // Comparação (exemplo: população)
+    printf("\n===== RESULTADO DA COMPARACAO =====\n");
+    if (carta1.populacao > carta2.populacao) {
+        printf("Carta vencedora: %s (%s) [MAIOR POPULACAO]\n", carta1.nome, carta1.estado);
+    } else if (carta2.populacao > carta1.populacao) {
+        printf("Carta vencedora: %s (%s) [MAIOR POPULACAO]\n", carta2.nome, carta2.estado);
     } else {
-        printf("As duas cidades possuem a mesma população.\n");
+        printf("Empate! As duas cidades possuem a mesma populacao.\n");
     }
 
     return 0;
